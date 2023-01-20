@@ -1,4 +1,13 @@
+<mat-toolbar color="primary" >
+  <span>Upload de Arquivo</span>
+</mat-toolbar>
+
 <input type="text" (change)="getName(name.value)" #name /> <br />
 <input type="file" (change)="inputFile($event)" /> <br />
-<input type="button" (click)="submitData()" value="Upload de Arquivo" />
 
+<button mat-raised-button color="primary" (click)="submitData()">Upload de Arquivo</button>
+
+<div class="progress" *ngIf="barWidth!='0%'">
+  <span [innerHTML]="barWidth"></span>
+  <div class="bar" [style.width]="barWidth"></div>
+</div>
